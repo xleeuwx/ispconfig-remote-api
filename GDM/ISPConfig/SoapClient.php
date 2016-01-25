@@ -477,7 +477,7 @@ class SoapClient extends AbstractSoapClient {
 
     public function sitesFtpUserAdd($clientId, $siteId, $userName, $password, $quotaSize = "-1", $active = "y") {
         $result = false;
-        $site   = $this->getSite($siteId);
+        $site   = $this->sitesWebDomainGet($siteId);
         if ($site !== false) {
             $params = array(
                 "server_id"        => $site['server_id'],
@@ -615,7 +615,7 @@ class SoapClient extends AbstractSoapClient {
 
     public function sitesWebAliasdomainAdd($clientId, $siteId, $alias) {
         $result = false;
-        $site   = $this->getSite($siteId);
+        $site   = $this->sitesWebDomainGet($siteId);
         if ($site !== false) {
             $params = array(
                 "server_id"        => $site['server_id'],
